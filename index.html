@@ -8,8 +8,6 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Tangerine">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
@@ -46,6 +44,24 @@
       };
     </script>
     <style type="text/css">
+      @font-face {
+  font-family: Montecarlo;
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Montecarlo-Regular.ttf");
+}
+@font-face {
+  font-family: MaShanZheng;
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/MaShanZheng-Regular.ttf");
+}
+@font-face {
+  font-family: Lobster;
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Lobster-Regular.ttf");
+}
       * {
         margin: 0;
         padding: 0;
@@ -57,7 +73,7 @@
       }
 
       p {
-        font-family: "Trebuchet MS", sans-serif;
+        font-family: "Roboto", sans-serif;
         font-size: 20pt;
         margin: 0pt;
         text-align: center;
@@ -95,11 +111,11 @@
         <div
           class="relative p-[50px] bg-[url('https://blog.zgzg.io/images/cert.jpg')]"
         >
-          <div class="p-[50px] bg-[#ffffff88] rounded-[100px]">
+          <div class="p-[50px] bg-[#ffffff88] border-2 border-gray-500 rounded-[100px]">
             <p
-              class="italic font-bold bg-no-repeat bg-contain"
+              class="font-bold bg-no-repeat bg-contain"
               style="
-                font-family: 'Cambria', serif;
+                font-family: 'Lobster', serif;
                 font-size: 45pt;
                 background-position-x: 100px;
                 background-image: url('https://blog.zgzg.io/images/logo.png');
@@ -108,29 +124,30 @@
               Volunteer
             </p>
             <p
-              class="italic text-[45pt] font-bold"
-              style="font-family: 'Cambria', serif"
+              class="text-[45pt] font-bold"
+              style="font-family: 'Lobster', serif"
             >
               Certiﬁcate of Appreciation
             </p>
-            <p style="font-family: PMingLiU, serif; font-size: 40pt">志愿服务证书</p>
+            <p style="font-family: MaShanZheng, serif; font-size: 40pt">志愿服务证书</p>
             <div class="p-[10px]"></div>
-            <p style="font-family: 'SimSun'; font-size: 25pt">兹授予</p>
-            <p id="name" class="italic text-center font-bold text-[50pt]" style="font-family: 'Montecarlo', serif">XXX</p>
+            <p style="font-size: 25pt">THIS AWARD IS GIVEN TO</p>
+            <p style="font-size: 25pt">兹授予</p>
+            <p id="name" class="text-center font-bold text-[50pt]" style="font-family: 'MonteCarlo', serif">XXX</p>
             <div class="p-[10px]"></div>
             <p style="font-family: 'MS PGothic', sans-serif; font-size: 20pt">
               以表彰您的卓越而无私的奉献服务
             </p>
-            <p style="text-indent: 0pt; text-align: center">
+            <p style="text-indent: 0pt;  text-align: center">
               IN RECOGNITION OF YOUR DEDICATION AND EXCEPTIONAL SERVICE AT
             </p>
             <p
               class="font-bold; text-[25pt]; italic"
-              style="font-family: 'Verdana', sans-serif"
+              style="font-family: 'Lobster', sans-serif"
             >
               2023 ZGZG Mid-Autumn Festival Culture Fair
             </p>
-            <p class="font-bold; text-[25pt]" style="font-family: 'PMingLiU', serif">
+            <p class="font-bold; text-[25pt]" style="font-family: 'MaShanZheng', serif">
               2023年“载歌在谷”中秋游园
             </p>
             <div class="p-[10px]"></div>
@@ -139,7 +156,7 @@
               FOR
               <span style="font-family: 'MS PGothic', sans-serif; font-size: 20pt"
                 >达 </span
-              ><span id="time"></span><span> Hours</span>
+              ><span class="font-bold text-[35pt]" id="time"></span><span> Hours</span>
               <span style="font-family: 'MS PGothic', sans-serif; font-size: 20pt"
                 >小时</span
               >
@@ -156,14 +173,14 @@
                     src="https://blog.zgzg.io/images/logo.png"
                   />
                 </div>
-                <p style="font-family: 'SimSun'; font-size: 16pt">载歌在谷理事会</p>
-                <p style="font-family: 'Trebuchet MS', sans-serif; font-size: 16pt">
+                <p style="font-size: 16pt">载歌在谷理事会</p>
+                <p style="font-size: 16pt">
                   Board of ZGZG Community
                 </p>
               </div>
               <div
                 class="font-bold italic text-[20pt] text-center flex-basis-[20%]"
-                style="font-family: Cambria, serif"
+                style="font-family: Lobster, serif"
               >
                 Joint with
               </div>
