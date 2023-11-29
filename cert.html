@@ -1,0 +1,339 @@
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <title>载歌在谷</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="text/javascript"
+      src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://blog.zgzg.io/custom/js/mustache.min.js"
+    ></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+      // 请勿abuse这个key，谢谢。
+      var key = {
+        type: "service_account",
+        project_id: "cert-sheet-api",
+        private_key_id: "4ba4282f3f5f65ed7a5509a92eea0d75efdd7bf9",
+        private_key:
+          "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC9L37agD5Hh2ZT\n2loLSYmbYneyYof6V6Pf4/oCozjHk4D0aKbATwWlLOyDF4Ze6rIqeFJv2mMmDdO+\naCEPZ3z3sFaSsBdsBqN2fwu9xNKiPCB/wz9vSo5HoD40r4CxBtE9IomMEPdq84Nz\nP0RheajTwhAB8vQbdIGVNXCnRAKTFkFs0IoArovaXH76dpmJzevbaeT3fDAdm12W\nTzvdcWb8WTlCIu6s+IApT3EIwr7HkL5myAmf6GPrBd12sPf/UkUmvFr8Y37vrnVh\nHC8XlmTsd3B/ft/qQldXa4g7lHx8CTFOlDtnyI+NvPnBIXPMVZFwQYu1yx4ASS0B\nVCcwI8+TAgMBAAECggEACEdv0bgTAaZXQAwqLJxHPVmNy2ysbrQvI7kiU8M41OML\nnaaGxZuvr47LuuDorHaw3VLuqJ5yAFRSk96Ss83flidNYpX6MGwJ80GUDfXzEc53\nzZ+JwyEMIO5OSpfzlcuqlHZSdqK3cSK++egm4e0lCj9P3AX50MnEcfcouukrA6y+\nN34QzFfx/GLlHwJEJfxjWzAAhK4BppgJxhV7ah8okH42N04c9Xz8DywIdlkpH/6q\nK75wp6+67Vj6GOPZV68YIb4FOghXhnuJniLsfkpmskC9Dmzi/bot2cCcSyGGoAFY\n42yzU9sSHm4LeEiKBjTAe7xBNaYKy8hCJJsFLnX9wQKBgQD8KV9THKMOv3Z8WfOz\nVtWFVdRkhMQ0p6PIZTngGuqDG7oMzrKYPX6VT3eIFZjkqJshM7Q+RsRMlpFtrp+z\nwkMTM2WBuYLfxPO8dHc2e6/zT4jbRX/yXyny0RCxMgaLPGQiPqT+29WhlHTRk/mL\nYjE1pR+rSvkYeI20Am0uAQuiOQKBgQDAELeGp0f6ZcyGkCRbpNG4UpWHK8x7lfND\n9BhwJY4l9idShOeRBrBoKL3g4eFrVZsWvHwD7aL3GY0fR7cXplkemHVKFQkvhG5O\nYEcw6dWTHeABfDt/sp9kh+ud7viKo/n0knhz1rbFIwqTcEd6jqtwGfkW3/9Tj1CL\nfB7eoWwQKwKBgD5pixOKKf2zfAMpTH1eB7lZ1hkPF3Uk7Q/jpiCG6PaMfU9ANcoi\nplsUcTR4jABEjyj3oCwt3dZLCjHIn/ShJ3LwLLagEPmLyPwjI4KTuKgTTn9fQ1zd\nGwfjoSsKg74gs3QaZ0JBbS3yDbv10TUjl6R8e0stYlwhMomUdCuHzLZZAoGBAKNK\n0y4JdRm/iQby7+Z2l9N1aym0JDMChwPEOS7HzzYZNM9krZhQrpSv5teWU9e0vZm0\nAGA6nu4k7CWnDFRwGp73kei9P8UFe97o3j4I4IsmwDejDtb/36JSKRFqhichSLcV\n/JDIATZUF37I3Ayn1bwGaQ94vBSn6RveGETByyVnAoGBAO3/YIVoSXRBmYYn07rL\ntYhr+VselnXEvdk5SiTcEtiDJZeOdAQEqHmMMSNb10z5nJ2Q0iZwzybhHhOHA06n\nRMJCChqLAMkh/mA/vH9wBj8US0nsfs1s8tEiYBOl604SOSN00F9WgY0XYLHUAYw6\n+X906fPrX5GebmYrmRKGY86u\n-----END PRIVATE KEY-----\n",
+        client_email: "cert-google-sheet@cert-sheet-api.iam.gserviceaccount.com",
+        client_id: "107104561913254083704",
+        auth_uri: "https://accounts.google.com/o/oauth2/auth",
+        token_uri: "https://oauth2.googleapis.com/token",
+        auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+        client_x509_cert_url:
+          "https://www.googleapis.com/robot/v1/metadata/x509/cert-google-sheet%40cert-sheet-api.iam.gserviceaccount.com",
+        universe_domain: "googleapis.com",
+      };
+    </script>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        text-indent: 0;
+        color: black;
+        text-size-adjust: none;
+        box-sizing: content-box;
+        line-height: normal;
+      }
+
+      p {
+        font-family: "Trebuchet MS", sans-serif;
+        font-size: 20pt;
+        margin: 0pt;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <canvas id="myCanvas" width="1280" height="1707"></canvas> -->
+    <template id="listTemplate">
+      <div>
+        <a style="text-decoration: underline" href="?name={{name2}}" id="{{name2}}">
+          {{name}}
+        </a>
+      </div>
+    </template>
+    <div class="flex flex-col items-center" id="content">
+      <div id="search">
+        <img
+                    style="margin: auto"
+                    width="50"
+                    height="50"
+                    src="https://blog.zgzg.io/images/logo.png"
+                  />
+        <label for="name">Search For Your Name: </label>
+        <input class="rounded-sm border-2 border-black" id="namesearch" />
+        <div>Or Select from the list</div>
+      </div>
+      <div id="list"></div>
+      <div
+        id="capture"
+        class="relative"
+        style="display: none; width: 953; height: 1116"
+      >
+        <div
+          class="relative p-[50px] bg-[url('https://blog.zgzg.io/images/cert.jpg')]"
+        >
+          <div class="p-[50px] bg-[#ffffff88] rounded-[100px]">
+            <p
+              class="italic font-bold bg-no-repeat bg-contain"
+              style="
+                font-family: 'Cambria', serif;
+                font-size: 45pt;
+                background-position-x: 100px;
+                background-image: url('https://blog.zgzg.io/images/logo.png');
+              "
+            >
+              Volunteer
+            </p>
+            <p
+              class="italic text-[45pt] font-bold"
+              style="font-family: 'Cambria', serif"
+            >
+              Certiﬁcate of Appreciation
+            </p>
+            <p style="font-family: PMingLiU, serif; font-size: 40pt">志愿服务证书</p>
+            <div class="p-[10px]"></div>
+            <p style="font-family: 'SimSun'; font-size: 25pt">兹授予</p>
+            <p id="name" class="italic text-center font-bold text-[50pt]" style="font-family: 'Montecarlo', serif">XXX</p>
+            <div class="p-[10px]"></div>
+            <p style="font-family: 'MS PGothic', sans-serif; font-size: 20pt">
+              以表彰您的卓越而无私的奉献服务
+            </p>
+            <p style="text-indent: 0pt; text-align: center">
+              IN RECOGNITION OF YOUR DEDICATION AND EXCEPTIONAL SERVICE AT
+            </p>
+            <p
+              class="font-bold; text-[25pt]; italic"
+              style="font-family: 'Verdana', sans-serif"
+            >
+              2023 ZGZG Mid-Autumn Festival Culture Fair
+            </p>
+            <p class="font-bold; text-[25pt]" style="font-family: 'PMingLiU', serif">
+              2023年“载歌在谷”中秋游园
+            </p>
+            <div class="p-[10px]"></div>
+
+            <p class="pt-[4px]">
+              FOR
+              <span style="font-family: 'MS PGothic', sans-serif; font-size: 20pt"
+                >达 </span
+              ><span id="time"></span><span> Hours</span>
+              <span style="font-family: 'MS PGothic', sans-serif; font-size: 20pt"
+                >小时</span
+              >
+            </p>
+            <div class="p-[10px]"></div>
+            <div class="p-[10px]"></div>
+            <div style="display: flex; align-items: center">
+              <div style="flex-basis: 40%">
+                <div style="display: flex">
+                  <img
+                    style="margin: auto"
+                    width="100"
+                    height="100"
+                    src="https://blog.zgzg.io/images/logo.png"
+                  />
+                </div>
+                <p style="font-family: 'SimSun'; font-size: 16pt">载歌在谷理事会</p>
+                <p style="font-family: 'Trebuchet MS', sans-serif; font-size: 16pt">
+                  Board of ZGZG Community
+                </p>
+              </div>
+              <div
+                class="font-bold italic text-[20pt] text-center flex-basis-[20%]"
+                style="font-family: Cambria, serif"
+              >
+                Joint with
+              </div>
+              <div style="flex-basis: 40%">
+                <div style="display: flex">
+                  <img
+                    style="margin: auto"
+                    width="100"
+                    height="100"
+                    src="https://blog.zgzg.io/images/association.png"
+                  />
+                </div>
+                <p style="font-family: 'SimSun'; font-size: 16pt">
+                  Asian American Youth Association
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="absolute left-[10] bottom-[10]">
+            Certificate Id 证书编号: <span id="certid"></span>
+          </div>
+        </div>
+      </div>
+      <div class="p-[10px]"></div>
+      <button id="button-pdf" style="display: none">Download下载</button>
+      <pre id="content" style="white-space: pre-wrap"></pre>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.0.0-rc.1/jsencrypt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script>
+      function GetAccessTokenFromServiceAccount() {
+        const _url = "https://www.googleapis.com/oauth2/v4/token";
+        const _grant_type = "urn:ietf:params:oauth:grant-type:jwt-bearer";
+        const info = {
+          private_key: key.private_key,
+          client_email: key.client_email,
+          scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+        };
+        return new Promise((resolve, reject) => {
+          const header = { alg: "RS256", typ: "JWT" };
+          const now = Math.floor(Date.now() / 1000);
+          const claim = {
+            iss: info.client_email,
+            scope: info.scopes.join(" "),
+            aud: _url,
+            exp: (now + 3600).toString(),
+            iat: now.toString(),
+          };
+          if (info.userEmail) {
+            claim.sub = info.userEmail;
+          }
+          const signature =
+            btoa(JSON.stringify(header)) + "." + btoa(JSON.stringify(claim));
+          const sign = new JSEncrypt();
+          sign.setPrivateKey(info.private_key);
+          const jwt =
+            signature + "." + sign.sign(signature, CryptoJS.SHA256, "sha256");
+          const params = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              assertion: jwt,
+              grant_type: _grant_type,
+            }),
+          };
+          fetch(_url, params)
+            .then((res) => res.json())
+            .then((res) => resolve(res))
+            .catch((err) => reject(err));
+        });
+      }
+      GetAccessTokenFromServiceAccount().then((res) => {
+        console.log(res);
+        fetchData(res.access_token);
+      });
+
+      let ua = window.navigator.userAgent.toLowerCase();
+      if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        $("#content").html(
+          '<div style="text-align: center; margin-top: 50px"><img src="https://blog.zgzg.io/images/logo.png" width="200" height="200" /><p style="font-size: 20pt">请点击右上角按钮，在浏览器中打开</p></div>'
+        );
+      } else {
+      }
+
+      function fetchData(accessToken) {
+        fetch(
+          "https://sheets.googleapis.com/v4/spreadsheets/1PzxkBYMqCQLSa0Gu-oM3lw8ekJIhqMKXADrRozm2KKI/values/6:50",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              authorization: "Bearer " + accessToken,
+            },
+          }
+        )
+          .then((response) => {
+            return response.text();
+          })
+          .then((data) => {
+            data = JSON.parse(data);
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get("name");
+            let awards = [];
+            for (let row of data.values) {
+              awards.push({
+                name: row[2],
+                time: row[6],
+                certid: row[11],
+              });
+            }
+            if (name && name.length > 0) {
+              for (let award of awards) {
+                if (award.name.replace(/\s+/g, "-") == name) {
+                  $("#name").html(award.name);
+                  $("#time").html(award.time);
+                  $("#certid").html(award.certid);
+                  $("#list").hide();
+                  $("#header").hide();
+                  $("#search").hide();
+                  $("#capture").show();
+                  $("#button-pdf").show();
+                  break;
+                }
+              }
+            } else {
+              let names = [];
+              for (award of awards.sort((a, b) => a.name.localeCompare(b.name))) {
+                const listTemplate = $("#listTemplate").html();
+                const rendered = Mustache.render(listTemplate, {
+                  name: award.name,
+                  name2: award.name.replace(/\s+/g, "-"),
+                  hour: award.time,
+                });
+                names.push(award.name);
+                $("#list").append(rendered);
+              }
+              $("#namesearch").autocomplete({
+                source: names,
+                select: function (event, ui) {
+                  window.location.href =
+                    "?name=" + ui.item.value.replace(/\s+/g, "-");
+                },
+              });
+            }
+          });
+      }
+
+      function downloadPDF() {
+        /*
+        console.log("???");
+        $("#button-pdf").attr('hidden', 'true')
+        pdf.addHTML($("#mainContainer"), 0, -20, { allowTaint: true, useCORS: true, pagesplit: false }, function () {
+          pdf.save('cert.pdf');
+          $("#button-pdf").removeAttr('hidden', 'true')
+        });*/
+        html2canvas(document.querySelector("#capture"), {
+          width: 953,
+          height: 1116,
+        }).then((canvas) => {
+          const imgData = canvas.toDataURL("image/jpeg", 0.7);
+          console.log(canvas.height, canvas.width);
+          const pdf = new jspdf.jsPDF("p", "px", [canvas.width, canvas.height]);
+          pdf.addImage(imgData, "JPEG", 0, 0, canvas.width, canvas.height);
+          pdf.save("cert.pdf");
+        });
+      }
+
+      $("#button-pdf").click(function () {
+        downloadPDF();
+      });
+    </script>
+  </body>
+</html>
